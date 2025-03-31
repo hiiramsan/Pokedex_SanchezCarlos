@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "206886379101",
+    "project_id": "pokedex-95a2f",
+    "storage_bucket": "pokedex-95a2f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206886379101:android:13f7f4b97426ee74dfb7b4",
+        "android_client_info": {
+          "package_name": "sanchez.carlos.practica12_sanchezcarlos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWgQXHcHkAadEQyNfK0oD6LHORmt-29_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
