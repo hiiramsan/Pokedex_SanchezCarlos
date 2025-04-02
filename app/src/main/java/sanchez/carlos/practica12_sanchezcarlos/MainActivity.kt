@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var listView: ListView
     private lateinit var pokemonsRef: DatabaseReference
-    private val pokemonList = mutableListOf<String>()
+    private val pokemonList = mutableListOf<Pokemon>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,16 +54,14 @@ class MainActivity : AppCompatActivity() {
                 pokemonList.clear()
 
                 for (pokemonSnapshot in snapshot.children) {
-                    val name = pokemonSnapshot.child("name").value.toString()
-                    val num = pokemonSnapshot.child("num").value.toString()
-                    pokemonList.add("#$num - $name")
+                    val pokemon = pokemonSnapshot.getValue(Pokemon::class.java)
+                    if(pokemon!=null) {
+                        pokemonList.add(pokemon)
+                    }
+
                 }
 
-                val adapter = ArrayAdapter(
-                    this@MainActivity,
-                    android.R.layout.simple_list_item_1,
-                    pokemonList
-                )
+                val adapter = PokemonAdapter(this@MainActivity, pokemonList)
                 listView.adapter = adapter
             }
 
